@@ -3,8 +3,10 @@
     
         <h1 class="text-light text-center  display-5 banner-heading mt-0 ">Create your Account!</h1>
     
-        <h1 class="text-warning text-center  display-5 banner-heading mt-0 ">{{error}}</h1>
-    
+        <p class="text-warning text-center fw-bold mt-3">
+            {{ error }}
+        </p>
+            
         <h1 class="text-warning text-center  display-5 banner-heading mt-0 ">{{AccountCreated}}</h1>
     
         <div class="container">
@@ -94,7 +96,7 @@ export default {
 
             const password_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$/
             if (!(password_pattern.test(password))) {
-                this.error = "Password not strong enough."
+                this.error = "Password not strong enough. It must be 8–30 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character (@, $, !, %, *, ?, or &)."
                 return;
             }
 
