@@ -3,7 +3,7 @@
     
         <h1 class="text-light text-center  display-5 banner-heading mt-0 ">Create your Account!</h1>
     
-        <p class="text-warning text-center fw-bold mt-3">
+        <p v-if="error" class="text-warning text-center fw-bold">
             {{ error }}
         </p>
             
@@ -103,7 +103,7 @@ export default {
 
             userService.create(first_name, last_name, username, password)
                 .then(result => {
-                    this.AccountCreated = "Account Created!"
+                    this.AccountCreated = "Account Created, login!"
                 })
                 .catch(error => {
                     this.error = error;
