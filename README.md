@@ -4,6 +4,9 @@ Chirrup is a full-stack social media web application built with a Node.js and Ex
 
 The project provides a browser-based interface for interacting with the Chirrup REST API and demonstrates full-stack development across the frontend, backend, database, routing, and API layers.
 
+## Walkthrough
+https://www.youtube.com/watch?v=e2Op1XRsc7Q&t=6s
+
 ## Features
 
 Chirrup provides social media functionality including:
