@@ -139,7 +139,7 @@ export default {
             postService.CreatePost(text)
                 .then(result => {
                     console.log("Auth successful")
-                    this.PostCreated = "Your post has been published!"
+                    this.PostCreated = "Your post has been published, Refresh the page and check feed!"
                 })
                 .catch(error => {
                     this.error = error;
