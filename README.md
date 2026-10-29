@@ -1,24 +1,151 @@
-# Chirrup Starter Code
+# Chirrup Full-Stack Application
 
-**For the full-stack web development assignment 23/24**
+Chirrup is a full-stack social media web application built with a Node.js and Express backend, a SQLite database, and a Vue.js frontend.
 
-Steps to download and run:
-1. Make sure you have NodeJS installed on your machine ([Download NodeJS](https://nodejs.org/en/download/))
-2. Make sure you have Git installed on your machine ([Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
-2. In your terminal, navigate to the directory where you want to download the project
-3. Run `git clone https://github.com/ash-williams/fsd_chirrup_server`
-4. Once the project has finished downloading, navigate into the projects root directory `cd fsd_chirrup_server`
-5. Run `npm install` to install all dependencies for the project
-6. Once the dependencies have installed, run the server using `npm run dev`. You will see a message saying that the server is running on port 3333.
-7. In a **separate terminal window** navigate to the projects root directory and run `npm run test` to run the tests. The tests will mostly fail, but that is because we have not yet written any code.
+The project provides a browser-based interface for interacting with the Chirrup REST API and demonstrates full-stack development across the frontend, backend, database, routing, and API layers.
 
-Once you have completed the above, you are set up and ready to begin work on the assignment.
+## Features
 
-**Things to remember:**
-1. To re-run the tests, you can first wipe the DB by running `npm run wipe`. The tests assume a fresh database each time.
-2. The tests may have mistakes too, check your work manually (using Postman). If you're not sure, ask.
-3. The API documentation is located on Swagger [here](https://app.swaggerhub.com/apis/MMU-SE/Chirrup/1.0.0/#/)
+Chirrup provides social media functionality including:
 
-If you have any issues, come see me in the labs.
+- User accounts and authentication
+- Creating and viewing posts
+- Liking posts
+- Following other users
+- User and post data stored using SQLite
+- Vue-based frontend interface
+- REST API powered by Node.js and Express
 
-Ash
+## Technologies Used
+
+### Backend
+
+- Node.js
+- Express
+- SQLite
+- Joi
+- CORS
+
+### Frontend
+
+- Vue 3
+- Vue Router
+- Vite
+- JavaScript
+- HTML/CSS
+
+## Project Structure
+
+```text
+fsd_chirrup_server/
+├── app/
+│   ├── controllers/
+│   ├── lib/
+│   ├── models/
+│   └── routes/
+├── frontend/
+│   └── vue-project/
+├── database.js
+├── db.sqlite
+├── package.json
+├── package-lock.json
+├── server.js
+└── README.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+Before running the application, ensure that you have the following installed:
+
+- Node.js
+- npm
+- Git
+
+The application uses SQLite through the Node.js `sqlite3` package, so a separate database server does not need to be installed or started.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/jerryjefferson075-creator/chirrup-fullstack.git
+cd chirrup-fullstack
+```
+
+### 2. Install the backend dependencies
+
+From the project root directory, run:
+
+```bash
+npm install
+```
+
+### 3. Install the frontend dependencies
+
+The Vue frontend has its own dependencies. From the project root, run:
+
+```bash
+npm --prefix frontend/vue-project install
+```
+
+### 4. Start the application
+
+From the project root, run:
+
+```bash
+npm run dev
+```
+
+This starts both:
+
+- the Node.js/Express backend using Nodemon
+- the Vue frontend using Vite
+
+The frontend and backend do not need to be started separately.
+
+Once Vite has started, the terminal will display the local frontend URL. Open this URL in a web browser to use Chirrup.
+
+To stop the development servers, press:
+
+```text
+Ctrl + C
+```
+
+## Database
+
+Chirrup uses SQLite for persistent application data.
+
+The repository includes a `db.sqlite` database file, and no separate database server needs to be started.
+
+The database contains the application's core data tables:
+
+- `users`
+- `posts`
+- `likes`
+- `followers`
+
+The backend connects directly to `db.sqlite` when the application starts. The database setup code also attempts to create the required tables if they do not already exist.
+
+> Run the application from the project root directory so that the backend can locate `db.sqlite` correctly.
+
+## Running the Backend Only
+
+If required, the Express backend can be started independently using:
+
+```bash
+npm start
+```
+
+This runs the backend with Node.js without starting the Vue development server.
+
+For normal development and use of the complete application, run:
+
+```bash
+npm run dev
+```
+
+## Repository
+
+The source code for this project is available on GitHub:
+
+https://github.com/jerryjefferson075-creator/chirrup-fullstack

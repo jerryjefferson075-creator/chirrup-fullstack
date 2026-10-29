@@ -1,0 +1,7 @@
+node_modules/
+frontend/vue-project/node_modules/
+frontend/vue-project/dist/
+.env
+.env.*
+!.env.example
+test_out.txt
